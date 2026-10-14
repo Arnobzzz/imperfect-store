@@ -20,7 +20,7 @@ a{text-decoration:none;color:inherit}
 .spotlight{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(183,28,28,.08) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);mix-blend-mode:overlay}
 #loader{position:fixed;inset:0;background:var(--primary);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 1s ease,visibility 1s ease}
 #loader.hidden{opacity:0;visibility:hidden}
-.loader-logo{width:150px;height:175px;color:var(--bg);animation:loaderPulse 1.5s ease-in-out infinite}
+.loader-logo{width:150px;height:175px;object-fit:contain;filter:brightness(0) invert(.95);animation:loaderPulse 1.5s ease-in-out infinite}
 .loader-text{font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--bg);letter-spacing:.5em;margin-top:1.5rem;overflow:hidden}
 .loader-text span{display:inline-block;animation:slideUp .6s ease forwards;opacity:0;transform:translateY(100%)}
 @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
@@ -31,7 +31,7 @@ a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;transition:all .5s cubic-bezier(.16,1,.3,1)}
 nav.scrolled{background:rgba(44,30,26,.97);backdrop-filter:blur(20px);padding:.8rem 4rem;box-shadow:0 10px 40px rgba(0,0,0,.15)}
 .nav-logo-wrap{display:flex;align-items:center;gap:.8rem;cursor:pointer}
-.nav-logo-img{width:46px;height:54px;color:var(--bg)}
+.nav-logo-img{width:46px;height:54px;object-fit:contain}
 nav.scrolled .nav-logo-img{filter:brightness(0) invert(.95)}
 .nav-logo-text{font-family:'Anton',sans-serif;font-size:1.2rem;color:var(--bg);letter-spacing:.08em;font-style:italic}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -44,12 +44,11 @@ nav.scrolled .nav-logo-img{filter:brightness(0) invert(.95)}
 .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
 .menu-toggle.active span:nth-child(2){opacity:0}
 .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
-img.logo-img{object-fit:contain}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:var(--bg)}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:8rem 5rem 4rem;position:relative;z-index:2}
 .hero-logo-container{width:230px;height:270px;margin-bottom:2rem;position:relative;perspective:1000px;opacity:0;animation:fadeInLogo 1.2s ease 2.2s forwards}
 @keyframes fadeInLogo{from{opacity:0;transform:translateY(40px) rotateY(-30deg)}to{opacity:1;transform:translateY(0) rotateY(0)}}
-.hero-logo{width:100%;height:100%;color:var(--logo-brown);animation:logoFloat 6s ease-in-out infinite;filter:drop-shadow(16px 16px 0 rgba(44,30,26,.12))}
+.hero-logo{width:100%;height:100%;object-fit:contain;animation:logoFloat 6s ease-in-out infinite;filter:drop-shadow(16px 16px 0 rgba(44,30,26,.12))}
 @keyframes logoFloat{0%,100%{transform:rotateY(0) rotateX(0) translateY(0)}25%{transform:rotateY(8deg) rotateX(4deg) translateY(-12px)}50%{transform:rotateY(0) rotateX(0) translateY(-6px)}75%{transform:rotateY(-8deg) rotateX(-4deg) translateY(-12px)}}
 .hero-brand{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,6.5rem);font-weight:900;font-style:italic;color:var(--primary);line-height:.95;margin-bottom:1rem;overflow:hidden}
 .hero-brand .word{display:inline-block;overflow:hidden}
@@ -239,7 +238,7 @@ img.logo-img{object-fit:contain}
 footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(246,233,197,.1)}
 .footer-brand .footer-logo{font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;font-weight:900;margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
-.footer-logo-svg{width:42px;height:50px;color:var(--bg)}
+.footer-logo-svg{width:42px;height:50px;object-fit:contain;filter:brightness(0) invert(.95)}
 .footer-brand p{font-size:.9rem;opacity:.6;line-height:1.7;max-width:300px}
 .footer-col h4{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem;color:var(--red)}
 .footer-col a{display:block;color:var(--bg);font-size:.9rem;margin-bottom:.8rem;opacity:.7;transition:all .3s;cursor:pointer}
@@ -257,7 +256,6 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 .reveal-scale{opacity:0;transform:scale(.85);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 .magnetic{transition:transform .3s cubic-bezier(.16,1,.3,1)}
-/* ---- sub-pages (category & product) ---- */
 .sub-page{padding-top:7rem;min-height:80vh}
 .crumbs{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:.7;padding:1rem 4rem 0}
 .crumbs a{cursor:pointer}
@@ -324,29 +322,18 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<symbol id="ipm-logo" viewBox="0 0 440 520">
-<rect x="60" y="30" width="320" height="320" fill="none" stroke="currentColor" stroke-width="30"/>
-<rect x="72" y="172" width="58" height="46" fill="currentColor"/>
-<rect x="125" y="60" width="42" height="42" fill="currentColor"/>
-<path d="M146 126 V310 H334" fill="none" stroke="currentColor" stroke-width="42"/>
-<path d="M232 90 A60 60 0 0 1 232 210 L232 176 A26 26 0 0 0 232 124 Z" fill="currentColor"/>
-<path d="M338 196 L300 268 L287 224 L248 268" fill="none" stroke="currentColor" stroke-width="18"/>
-<text x="220" y="452" text-anchor="middle" font-family="Anton, sans-serif" font-style="italic" font-size="62" letter-spacing="4" fill="currentColor">I'MPERFECT</text>
-</symbol>
-</svg>
 <div class="grain"></div>
 <div class="spotlight" id="spotlight"></div>
 <div class="cursor" id="cursor"><div class="cursor-ring"></div></div>
 <div class="cursor-dot" id="cursorDot"></div>
 <div id="loader">
-<svg class="loader-logo logo-swap"><use href="#ipm-logo"/></svg>
+<img src="https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png" alt="I'm Perfect" class="loader-logo">
 <div class="loader-text"><span style="animation-delay:.1s">I</span><span style="animation-delay:.15s">'</span><span style="animation-delay:.2s">M</span><span style="animation-delay:.25s">&nbsp;</span><span style="animation-delay:.3s">P</span><span style="animation-delay:.35s">E</span><span style="animation-delay:.4s">R</span><span style="animation-delay:.45s">F</span><span style="animation-delay:.5s">E</span><span style="animation-delay:.55s">C</span><span style="animation-delay:.6s">T</span></div>
 <div class="loader-progress"></div>
 </div>
 <nav id="navbar">
 <div class="nav-logo-wrap" onclick="go('#/')">
-<svg class="nav-logo-img logo-swap"><use href="#ipm-logo"/></svg>
+<img src="https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png" alt="I'm Perfect" class="nav-logo-img">
 <span class="nav-logo-text">I'm Perfect</span>
 </div>
 <ul class="nav-links">
@@ -374,7 +361,9 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <div class="hero-floating-text top">PERFECT</div>
 <div class="hero-floating-text bottom">EXPERIMENTAL</div>
 <div class="hero-left">
-<div class="hero-logo-container"><svg class="hero-logo logo-swap"><use href="#ipm-logo"/></svg></div>
+<div class="hero-logo-container">
+<img src="https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png" alt="I'm Perfect" class="hero-logo">
+</div>
 <h1 class="hero-brand" id="heroBrand"></h1>
 <p class="hero-slogan"><em>Choose Perfect, Look Perfect</em></p>
 <div class="hero-ctas">
@@ -510,7 +499,7 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <footer>
 <div class="footer-top">
 <div class="footer-brand">
-<div class="footer-logo"><svg class="footer-logo-svg logo-swap"><use href="#ipm-logo"/></svg>I'm Perfect</div>
+<div class="footer-logo"><img src="https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png" alt="I'm Perfect" class="footer-logo-svg">I'm Perfect</div>
 <p>Choose Perfect, Look Perfect. Experimental streetwear for the avant-garde generation.</p>
 <div class="footer-social">
 <a id="footFb" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
@@ -531,12 +520,13 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 
 <script>
 /* ================= CONFIG ================= */
+const LOGO_URL = "https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png";
 const STORE = {
   whatsapp: "8801518423292",
   facebook: "https://www.facebook.com/imperfect.clothings/",
   instagram: "https://www.instagram.com/imperfect.clothings"
 };
-const CATALOG = { googleSheetCsvUrl: "", refreshSeconds: 300 }; // ← paste published CSV link here
+const CATALOG = { googleSheetCsvUrl: "", refreshSeconds: 300 };
 const CAT_META = [
   { id:"tee", name:"Tee", tag:"Everyday graphics" },
   { id:"shirt", name:"Shirts", tag:"Oversized & printed" },
@@ -569,7 +559,7 @@ const FALLBACK = [
 
 /* ================= ENGINE ================= */
 let PRODUCTS = [], CATEGORIES = [], homeCat = 'all';
-let BRAND = { logo:"", facebook:STORE.facebook, instagram:STORE.instagram, whatsapp:STORE.whatsapp };
+let BRAND = { logo:LOGO_URL, facebook:STORE.facebook, instagram:STORE.instagram, whatsapp:STORE.whatsapp };
 const waLink = m => "https://wa.me/" + BRAND.whatsapp + "?text=" + encodeURIComponent(m);
 const slug = s => String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const CAT_ALIAS = { hoodies:"hoodie", hoodie:"hoodie", tee:"tee", tees:"tee", tshirt:"tee", "t-shirt":"tee", shirt:"shirt", shirts:"shirt", sweatshirt:"sweatshirt", sweatshirts:"sweatshirt", sweat:"sweatshirt", pant:"pant", pants:"pant", jeans:"pant", denim:"pant" };
@@ -629,7 +619,7 @@ async function loadCatalog(){
       if(res.ok){ const rows=parseCSV(await res.text()); const p=normalize(rows); if(p.length){ PRODUCTS=p; console.log('[engine] sheet loaded → '+p.length+' products'); return; } }
     }catch(e){ console.warn('[engine] sheet failed, using fallback', e); }
   }
-  BRAND={ logo:"", facebook:STORE.facebook, instagram:STORE.instagram, whatsapp:STORE.whatsapp };
+  BRAND={ logo:LOGO_URL, facebook:STORE.facebook, instagram:STORE.instagram, whatsapp:STORE.whatsapp };
   PRODUCTS=normalize(FALLBACK);
   console.log('[engine] using built-in catalog');
 }
@@ -640,14 +630,12 @@ function computeCats(){
     return { id, name:m?m.name:(id.charAt(0).toUpperCase()+id.slice(1)), tag:m?m.tag:'New drops', count:PRODUCTS.filter(p=>p.category===id).length, image:first?first.image:PLACEHOLDER }; });
 }
 function applyBranding(){
-  if(BRAND.logo){
-    document.querySelectorAll('.logo-swap').forEach(el=>{
-      const img=document.createElement('img');
-      img.src=BRAND.logo; img.alt="I'm Perfect";
-      img.className=(el.getAttribute('class')||'').replace('logo-swap','')+' logo-img';
-      el.replaceWith(img);
-    });
-  }
+  document.querySelectorAll('.logo-swap').forEach(el=>{
+    const img=document.createElement('img');
+    img.src=BRAND.logo; img.alt="I'm Perfect";
+    img.className=(el.getAttribute('class')||'').replace('logo-swap','')+' logo-img';
+    el.replaceWith(img);
+  });
   const set=(id,href)=>{ const a=document.getElementById(id); if(a){ a.href=href; } };
   set('fbLink',BRAND.facebook); set('igLink',BRAND.instagram);
   set('footFb',BRAND.facebook); set('footIg',BRAND.instagram); set('footWa',waLink("Hi I'm Perfect! I want to place an order."));
@@ -769,7 +757,7 @@ function route(){
   let m;
   if((m=h.match(/^#\/category\/(.+)$/))){ home.style.display='none'; sub.style.display=''; renderCategory(sub,m[1]); }
   else if((m=h.match(/^#\/product\/(.+)$/))){ home.style.display='none'; sub.style.display=''; renderProduct(sub,m[1]); }
-  else { home.style.display=''; sub.style.display=''; document.title="I'm Perfect — Choose Perfect, Look Perfect"; renderHome(); }
+  else { home.style.display=''; sub.style.display='none'; document.title="I'm Perfect — Choose Perfect, Look Perfect"; renderHome(); }
   window.scrollTo(0,0); observeAll(); hoverAll(); init3DCards(); attachMagnetic();
 }
 window.addEventListener('hashchange',route);
@@ -780,7 +768,13 @@ document.querySelector('.hero').addEventListener('mousemove',e=>{ const w=docume
 const menuToggle=document.getElementById('menuToggle'), mobileMenu=document.getElementById('mobileMenu');
 menuToggle.addEventListener('click',()=>{ menuToggle.classList.toggle('active'); mobileMenu.classList.toggle('open'); });
 function closeMenu(){ mobileMenu.classList.remove('open'); menuToggle.classList.remove('active'); }
-document.getElementById('contactForm').addEventListener('submit',e=>{ e.preventDefault(); const b=e.target.querySelector('.form-submit span'); b.textContent='✓ Message Sent!'; e.target.querySelector('.form-submit').style.background='#2e7d32'; setTimeout(()=>{ b.textContent='Send Message →'; e.target.querySelector('.form-submit').style.background=''; e.target.reset(); },2500); });
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const [name,email,subject,message]=[...e.target.querySelectorAll('input,textarea')].map(i=>i.value.trim());
+  window.open(waLink(`WEBSITE MESSAGE\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`),'_blank');
+  const b=e.target.querySelector('.form-submit span'); b.textContent='✓ Opened WhatsApp!'; e.target.querySelector('.form-submit').style.background='#2e7d32';
+  setTimeout(()=>{ b.textContent='Send Message →'; e.target.querySelector('.form-submit').style.background=''; e.target.reset(); },2500);
+});
 const uploadArea=document.getElementById('uploadArea'), fileInput=document.getElementById('fileInput'), uploadPreview=document.getElementById('uploadPreview');
 document.getElementById('uploadBtn').addEventListener('click',()=>fileInput.click());
 uploadArea.addEventListener('dragover',e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); });
@@ -808,10 +802,4 @@ document.getElementById('submitCustom').addEventListener('click',()=>{
 /* ================= BOOT ================= */
 (async function boot(){
   await loadCatalog(); computeCats(); applyBranding(); createParticles(); animateHeroText(); route();
-  window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hidden'),1800));
-  setTimeout(()=>document.getElementById('loader').classList.add('hidden'),4500);
-  setInterval(async()=>{ const n=PRODUCTS.length; await loadCatalog(); computeCats(); applyBranding(); if(PRODUCTS.length!==n) route(); }, CATALOG.refreshSeconds*1000);
-})();
-</script>
-</body>
-</html>
+  window.addEventListener('load',
