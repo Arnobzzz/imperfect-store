@@ -20,7 +20,7 @@ a{text-decoration:none;color:inherit}
 .spotlight{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(183,28,28,.08) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);mix-blend-mode:overlay}
 #loader{position:fixed;inset:0;background:var(--primary);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 1s ease,visibility 1s ease}
 #loader.hidden{opacity:0;visibility:hidden}
-.loader-logo{width:150px;height:175px;object-fit:contain;filter:brightness(0) invert(.95);animation:loaderPulse 1.5s ease-in-out infinite}
+.loader-logo{width:150px;height:175px;object-fit:contain;background:#fff;border-radius:12px;padding:6px;animation:loaderPulse 1.5s ease-in-out infinite}
 .loader-text{font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--bg);letter-spacing:.5em;margin-top:1.5rem;overflow:hidden}
 .loader-text span{display:inline-block;animation:slideUp .6s ease forwards;opacity:0;transform:translateY(100%)}
 @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
@@ -31,8 +31,8 @@ a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;transition:all .5s cubic-bezier(.16,1,.3,1)}
 nav.scrolled{background:rgba(44,30,26,.97);backdrop-filter:blur(20px);padding:.8rem 4rem;box-shadow:0 10px 40px rgba(0,0,0,.15)}
 .nav-logo-wrap{display:flex;align-items:center;gap:.8rem;cursor:pointer}
-.nav-logo-img{width:46px;height:54px;object-fit:contain}
-nav.scrolled .nav-logo-img{filter:brightness(0) invert(.95)}
+.nav-logo-img{width:46px;height:54px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
+nav.scrolled .nav-logo-img{box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .nav-logo-text{font-family:'Anton',sans-serif;font-size:1.2rem;color:var(--bg);letter-spacing:.08em;font-style:italic}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{color:var(--bg);font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s;padding:.5rem 0;cursor:pointer}
@@ -238,7 +238,7 @@ nav.scrolled .nav-logo-img{filter:brightness(0) invert(.95)}
 footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(246,233,197,.1)}
 .footer-brand .footer-logo{font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;font-weight:900;margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
-.footer-logo-svg{width:42px;height:50px;object-fit:contain;filter:brightness(0) invert(.95)}
+.footer-logo-svg{width:42px;height:50px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
 .footer-brand p{font-size:.9rem;opacity:.6;line-height:1.7;max-width:300px}
 .footer-col h4{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem;color:var(--red)}
 .footer-col a{display:block;color:var(--bg);font-size:.9rem;margin-bottom:.8rem;opacity:.7;transition:all .3s;cursor:pointer}
@@ -368,7 +368,7 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <p class="hero-slogan"><em>Choose Perfect, Look Perfect</em></p>
 <div class="hero-ctas">
 <a class="hero-cta magnetic" onclick="go('#/category/all')"><span>Get Started</span><span class="arrow">→</span></a>
-<a class="hero-cta wa magnetic" id="heroWa" target="_blank" rel="noreferrer"><span>Order on WhatsApp</span></a>
+<a class="hero-cta wa magnetic" id="heroWa" href="https://wa.me/8801518423292" target="_blank" rel="noopener"><span>Order on WhatsApp</span></a>
 </div>
 </div>
 <div class="hero-right">
@@ -477,8 +477,8 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <h2>Get In Touch</h2>
 <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><h4>Phone</h4><p>01518423292<br>01860066158</p></div></div>
 <div class="contact-item"><div class="contact-icon blue">📍</div><div class="contact-detail"><h4>Location</h4><p>On Phone/PC/Tab Display, Earth</p></div></div>
-<div class="contact-item"><div class="contact-icon">📘</div><div class="contact-detail"><h4>Facebook</h4><a id="fbLink" target="_blank" rel="noreferrer">imperfect.clothings</a></div></div>
-<div class="contact-item"><div class="contact-icon blue">📷</div><div class="contact-detail"><h4>Instagram</h4><a id="igLink" target="_blank" rel="noreferrer">imperfect.clothings</a></div></div>
+<div class="contact-item"><div class="contact-icon">📘</div><div class="contact-detail"><h4>Facebook</h4><a id="fbLink" href="https://www.facebook.com/imperfect.clothings/" target="_blank" rel="noopener">imperfect.clothings</a></div></div>
+<div class="contact-item"><div class="contact-icon blue">📷</div><div class="contact-detail"><h4>Instagram</h4><a id="igLink" href="https://www.instagram.com/imperfect.clothings" target="_blank" rel="noopener">imperfect.clothings</a></div></div>
 </div>
 <div class="contact-form reveal-right">
 <h3>Send a Message</h3>
@@ -502,9 +502,9 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <div class="footer-logo"><img src="https://raw.githubusercontent.com/Arnobzzz/imperfect-store/main/logo.png" alt="I'm Perfect" class="footer-logo-svg">I'm Perfect</div>
 <p>Choose Perfect, Look Perfect. Experimental streetwear for the avant-garde generation.</p>
 <div class="footer-social">
-<a id="footFb" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
-<a id="footIg" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
-<a id="footWa" target="_blank" rel="noreferrer" aria-label="WhatsApp">☎</a>
+<a id="footFb" href="https://www.facebook.com/imperfect.clothings/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+<a id="footIg" href="https://www.instagram.com/imperfect.clothings" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+<a id="footWa" href="https://wa.me/8801518423292" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
 </div>
 </div>
 <div class="footer-col"><h4>Shop</h4><div id="footShop"></div></div>
@@ -512,7 +512,7 @@ footer{background:#1a1210;color:var(--bg);padding:4rem 5rem 2rem}
 <a onclick="goSection('about')">About Us</a><a onclick="goSection('lookbook')">Lookbook</a><a onclick="goSection('custom')">Custom Order</a><a onclick="goSection('contact')">Contact</a>
 </div>
 <div class="footer-col"><h4>Support</h4>
-<a id="supWa" target="_blank" rel="noreferrer">Track Order</a><a id="supIg" target="_blank" rel="noreferrer">Size Guide</a><a id="supFb" target="_blank" rel="noreferrer">Shipping Info</a>
+<a id="supWa" href="https://wa.me/8801518423292" target="_blank" rel="noopener">Track Order</a><a id="supIg" href="https://www.instagram.com/imperfect.clothings" target="_blank" rel="noopener">Size Guide</a><a id="supFb" href="https://www.facebook.com/imperfect.clothings/" target="_blank" rel="noopener">Shipping Info</a>
 </div>
 </div>
 <div class="footer-bottom"><span>© 2026 I'm Perfect. All Rights Reserved.</span><span>Designed with experimental passion</span></div>
@@ -584,10 +584,11 @@ function normalize(rows){
     const o={}; Object.keys(r).forEach(k=>{ o[String(k).toLowerCase().trim()]=String(r[k]??'').trim(); });
     const nm=o.name||''; if(!nm) return;
     if(nm.toLowerCase()==='config'||nm.toLowerCase()==='settings'){
-      if(o.logo) BRAND.logo=o.logo;
-      if(o.facebook) BRAND.facebook=o.facebook;
-      if(o.instagram) BRAND.instagram=o.instagram;
-      if(o.whatsapp) BRAND.whatsapp=o.whatsapp.replace(/[^0-9]/g,'');
+      const isURL=v=>/^https?:\/\//i.test(v);
+      if(o.logo&&isURL(o.logo)) BRAND.logo=o.logo;
+      if(o.facebook&&isURL(o.facebook)) BRAND.facebook=o.facebook;
+      if(o.instagram&&isURL(o.instagram)) BRAND.instagram=o.instagram;
+      const digits=(o.whatsapp||'').replace(/[^0-9]/g,''); if(digits.length>=10) BRAND.whatsapp=digits;
       return;
     }
     const pr=o.price||'';
@@ -628,12 +629,6 @@ function computeCats(){
     return { id, name:m?m.name:(id.charAt(0).toUpperCase()+id.slice(1)), tag:m?m.tag:'New drops', count:PRODUCTS.filter(p=>p.category===id).length, image:first?first.image:PLACEHOLDER }; });
 }
 function applyBranding(){
-  document.querySelectorAll('.logo-swap').forEach(el=>{
-    const img=document.createElement('img');
-    img.src=BRAND.logo; img.alt="I'm Perfect";
-    img.className=(el.getAttribute('class')||'').replace('logo-swap','')+' logo-img';
-    el.replaceWith(img);
-  });
   const set=(id,href)=>{ const a=document.getElementById(id); if(a){ a.href=href; } };
   set('fbLink',BRAND.facebook); set('igLink',BRAND.instagram);
   set('footFb',BRAND.facebook); set('footIg',BRAND.instagram); set('footWa',waLink("Hi I'm Perfect! I want to place an order."));
@@ -662,6 +657,11 @@ function createParticles(){ const c=document.getElementById('particles'); if(!c|
   for(let i=0;i<30;i++){ const p=document.createElement('div'); p.className='particle'; p.style.left=Math.random()*100+'%'; p.style.animationDelay=Math.random()*20+'s'; p.style.animationDuration=(15+Math.random()*10)+'s'; c.appendChild(p); } }
 function animateHeroText(){ const brand=document.getElementById('heroBrand'); if(!brand||brand.childElementCount) return;
   let html='', delay=0; ["I'm","Perfect"].forEach(w=>{ html+='<span class="word">'; for(const ch of w){ html+=`<span class="letter" style="animation-delay:${(2.4+delay).toFixed(2)}s">${ch}</span>`; delay+=.05; } html+=' </span>'; delay+=.1; }); brand.innerHTML=html; }
+
+/* ========== ANIMATED COUNTERS (numbers 0 → 500+, 2.2K+, 7+, 72h) ========== */
+const counterObserver=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.querySelectorAll('.stat-number').forEach(counter=>{const target=parseFloat(counter.dataset.target);const suffix=counter.dataset.suffix||'';const isDecimal=counter.dataset.decimal==='true';const duration=2000;const startTime=performance.now();function update(t){const el=t-startTime;const p=Math.min(el/duration,1);const eased=1-Math.pow(1-p,3);const cur=eased*target;counter.textContent=(isDecimal?cur.toFixed(1):Math.floor(cur))+suffix;if(p<1)requestAnimationFrame(update);else counter.textContent=(isDecimal?target.toFixed(1):target)+suffix;}requestAnimationFrame(update);});counterObserver.unobserve(en.target);}});},{threshold:.5});
+const statsSection=document.querySelector('.about-stats');
+if(statsSection) counterObserver.observe(statsSection);
 
 const go=h=>{ location.hash=h; };
 function scrollToSec(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
@@ -699,9 +699,9 @@ function renderCategory(sub,id){
   <div class="crumbs"><a onclick="go('#/')">Home</a> / <span>${title}</span></div>
   <div class="page-head"><h1 class="page-title">${title}</h1><p class="page-tag">${info?info.tag:'Every segment, one page.'}</p></div>
   <div class="order-strip reveal"><span>Order any style directly:</span>
-    <a class="btn btn-wa" target="_blank" rel="noreferrer" href="${waLink("Hi I'm Perfect! I'm browsing the "+title+". I want to order.")}">WhatsApp</a>
-    <a class="btn btn-fb" target="_blank" rel="noreferrer" href="${BRAND.facebook}">Facebook</a>
-    <a class="btn btn-ig" target="_blank" rel="noreferrer" href="${BRAND.instagram}">Instagram</a>
+    <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink("Hi I'm Perfect! I'm browsing the "+title+". I want to order.")}">WhatsApp</a>
+    <a class="btn btn-fb" target="_blank" rel="noopener" href="${BRAND.facebook}">Facebook</a>
+    <a class="btn btn-ig" target="_blank" rel="noopener" href="${BRAND.instagram}">Instagram</a>
   </div>
   <div class="chips"><a class="chip ${id==='all'?'on':''}" onclick="go('#/category/all')">All</a>
     ${CATEGORIES.map(c=>`<a class="chip ${id===c.id?'on':''}" onclick="go('#/category/${c.id}')">${c.name}</a>`).join('')}</div>
@@ -733,8 +733,8 @@ function renderProduct(sub,id){
       ${P.sizes.length?`<div class="opt"><label>Size</label><div class="chips left" id="sChips">${P.sizes.map(s=>`<button class="chip" onclick="pickSize(this,'${s}')">${s}</button>`).join('')}</div></div>`:''}
       <div class="opt"><label>Quantity</label><div class="qty"><button class="qty-btn" onclick="chgQty(-1)">−</button><span class="q-val" id="qVal">1</span><button class="qty-btn" onclick="chgQty(1)">+</button></div></div>
       <div class="order-col">
-        <a class="btn btn-wa big" id="oWa" target="_blank" rel="noreferrer" href="${waLink(msg())}">Order on WhatsApp →</a>
-        <div class="order-row"><a class="btn btn-fb" target="_blank" rel="noreferrer" href="${BRAND.facebook}">Facebook</a><a class="btn btn-ig" target="_blank" rel="noreferrer" href="${BRAND.instagram}">Instagram</a></div>
+        <a class="btn btn-wa big" id="oWa" target="_blank" rel="noopener" href="${waLink(msg())}">Order on WhatsApp →</a>
+        <div class="order-row"><a class="btn btn-fb" target="_blank" rel="noopener" href="${BRAND.facebook}">Facebook</a><a class="btn btn-ig" target="_blank" rel="noopener" href="${BRAND.instagram}">Instagram</a></div>
         <p class="note">Send your order message — we confirm personally on WhatsApp / Messenger. 72-hour delivery, cash on delivery available.</p>
       </div>
       ${P.details.length?`<div class="details"><h3>Product Details</h3><ul>${P.details.map(d=>`<li>${d}</li>`).join('')}</ul></div>`:''}
